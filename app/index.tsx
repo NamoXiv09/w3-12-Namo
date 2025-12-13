@@ -6,9 +6,10 @@ export default function App(){
     const router = useRouter()
 
     return(
-        <View style={styles.container}>
+        <View style={styles.container} >
             <Text style={styles.mainTitle}>หน้าแรก</Text>
-            <Button title="ไปหน้า 2" onPress={() => router.navigate('/square')} />
+            <Button title="คำนวณพื้นที่สี่เหลี่ยม" onPress={() => router.navigate('/square')} />
+            <Button title="คำนวณแกลลอนเป็นลิตร" onPress={() => router.navigate('/Gallon')} />
         </View>
     )
 }
@@ -16,9 +17,10 @@ export default function App(){
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor:"lightsalmon",
+        backgroundColor:"#ACFABF",
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        gap:15
     },
 
     mainTitle:({

@@ -9,10 +9,19 @@ export default function Square(){
     const [lenght, setLenght] = useState(0)
     const [area, setArea] = useState(0)
 
+    function calSquare(){
+        let ans = width * lenght
+        setArea(ans)
+    }
+
     return(
         <View style={styles.container}>
+            
             <Text style={styles.mainTitle}>คำนวณพื้นที่สี่เหลี่ยม</Text>
             {/* <Button title="กลับหน้าแรก" onPress={() => router.navigate('/')} /> */}
+
+            <Text>กว้าง {width} เมตร ยาว {lenght} เมตร</Text>
+            <Text> พื้นที่สี่เหลี่ยม = {area} ตารางเมตร </Text>
 
             <TextInput 
                 style={styles.textInput} 
@@ -21,9 +30,13 @@ export default function Square(){
                 onChangeText={(w) => setWidth(Number(w))}
             />
 
-            <TextInput style={styles.textInput} placeholder="กรอกความยาว"/>
+            <TextInput 
+            value={lenght.toString()}
+            onChangeText={(l) => setLenght(Number(l))}
+            style={styles.textInput} 
+            placeholder="กรอกความยาว"/>
 
-            <Button title="คำนวณ"/>
+            <Button title="คำนวณ" onPress={() => calSquare()}/>
         </View>
     )
 }
@@ -34,7 +47,8 @@ const styles = StyleSheet.create({
         backgroundColor:"white",
         justifyContent:"center",
         alignItems:"center",
-        gap:15
+        gap:15,
+        
     },
 
     mainTitle:({

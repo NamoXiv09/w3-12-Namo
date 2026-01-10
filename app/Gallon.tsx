@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+
 import { useRouter } from "expo-router";
 import { useState } from "react";
 
@@ -18,8 +19,7 @@ export default function CalGallon() {
             <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/")}>
                 <Text style={styles.backText}> ← กลับไปยังหน้าแรก</Text>
             </TouchableOpacity>
-
-            {/* กล่องหลัก */}
+            
             <View style={styles.card}>
                 <Text style={styles.title}>คำนวณแกลลอนเป็นลิตร</Text>
 
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 40,
         borderRadius: 10,
+        flexDirection:"row"
     },
     calText: {
         color: "white",

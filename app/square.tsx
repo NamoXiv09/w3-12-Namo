@@ -1,4 +1,5 @@
 import { View , Text, Button, StyleSheet, TextInput , TouchableOpacity} from "react-native";
+
 import { useRouter } from "expo-router";
 import { useState } from "react";
 
@@ -17,12 +18,11 @@ export default function Square(){
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.backButton} onPress={() => router.navigate("/")}>
-                            <Text style={styles.backText}> ← กลับไปยังหน้าแรก</Text>
+                <Text style={styles.backText}> ← กลับไปยังหน้าแรก</Text>
             </TouchableOpacity>
           <View style={styles.card}> 
             <Text style={styles.title}>คำนวณพื้นที่สี่เหลี่ยม</Text>
-            {/* <Button title="กลับหน้าแรก" onPress={() => router.navigate('/')} /> */}
-
+            
             <Text>กว้าง {width} เมตร ยาว {lenght} เมตร</Text>
             <Text> พื้นที่สี่เหลี่ยม = {area} ตารางเมตร </Text>
 
@@ -39,7 +39,10 @@ export default function Square(){
             onChangeText={(l) => setLenght(Number(l))}
             placeholder="กรอกความยาว"/>
 
-            <Button title="คำนวณ" onPress={() => calSquare()}/>
+            <TouchableOpacity style={styles.calButton} onPress={calSquare}>
+                <Text style={styles.calText}>คำนวณ</Text>
+             </TouchableOpacity>
+
             </View> 
         </View>
     )
